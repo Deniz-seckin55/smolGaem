@@ -15,12 +15,13 @@ int main() {
     const int enemyCount = 1;
     bool pressed = false;
     int rndsize = rand() % 30 + 6;
-    int rndspeed = rand() % 3 + 1;
+    int rndspeed = rand() % 6 + 3;
     int enemyi = 0;
     int score = 0;
     sf::Font font;
     if (!font.loadFromFile("font.ttf")) { }
     sf::Text text;
+    sf::Text fpstext;
     try
     { text.setFont(font); } catch (const std::exception&) { }
     text.setCharacterSize(24);
@@ -28,6 +29,15 @@ int main() {
     text.setFillColor(sf::Color::White);
     text.setStyle(sf::Text::Bold);
     text.setPosition(10, 10);
+    try {fpstext.setFont(font);}
+    catch (const std::exception&) {}
+    fpstext.setCharacterSize(12);
+    fpstext.setString("FPS: -");
+    fpstext.setFillColor(sf::Color::White);
+    fpstext.setStyle(sf::Text::Bold);
+    fpstext.setPosition(WW-200, 10);
+    sf::Clock clock;
+    window.setFramerateLimit(60);
     while (window.isOpen())
     {
         i+= 0.035f;
@@ -36,6 +46,9 @@ int main() {
         sf::Event event;
         while (window.pollEvent(event))
         {
+            float cTime = clock.restart().asSeconds();
+            float fps = 1.0f / cTime;
+            fpstext.setString("FPS: " + std::to_string(fps));
             // "close requested" event: we close the window
             if (event.type == sf::Event::Closed)
                 window.close();
@@ -117,6 +130,7 @@ int main() {
         /// display
         window.clear(sf::Color::Black);
         window.draw(text);
+        window.draw(fpstext);
         window.draw(ground);
         window.draw(player);
         window.draw(enemy);
