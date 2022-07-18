@@ -1,0 +1,24 @@
+﻿  Kaynak.cpp
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(12,47): warning C4244: 'bağımsız değişken': 'const float' - 'unsigned int' dönüşümü; veri kaybı olabilir
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(12,43): warning C4244: 'bağımsız değişken': 'const float' - 'unsigned int' dönüşümü; veri kaybı olabilir
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(45,128): warning C4244: 'bağımsız değişken': 'unsigned int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(45,110): warning C4244: 'bağımsız değişken': 'unsigned int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(71,45): warning C4244: 'bağımsız değişken': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+C:\Users\denix\source\repos\Project\Project\Kaynak.cpp(71,36): warning C4244: 'bağımsız değişken': 'int' - 'T' dönüşümü; veri kaybı olabilir
+          with
+          [
+              T=float
+          ]
+  Project.vcxproj -> C:\Users\denix\source\repos\Project\x64\Debug\Project.exe
